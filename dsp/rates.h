@@ -4,7 +4,6 @@
 #define SIGNALSMITH_DSP_RATES_H
 
 #include "./windows.h"
-#include "./delay.h"
 
 namespace signalsmith {
 namespace rates {
@@ -89,6 +88,7 @@ namespace rates {
 			inputBuffer.resize(channels*inputStride);
 			stride = (maxBlockLength + kernelLength)*2;
 			buffer.resize(stride*channels);
+      reset();
 		}
 
 		void reset() {
